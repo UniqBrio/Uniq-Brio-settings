@@ -10,6 +10,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Switch } from "@/components/ui/switch"
 import { Badge } from "@/components/ui/badge"
 import { Users, UserCheck, Shield, Flag, Edit, Plus, Trash2 } from "lucide-react"
+import reminder from "@/components/settings/reminder-settings"
+import ReminderSettings from "@/components/settings/reminder-settings"
 
 interface StudentFlag {
   id: string
@@ -355,6 +357,10 @@ export default function UserManagementSettings() {
           </div>
         </CardContent>
       </Card>
+
+      <ReminderSettings/>
     </div>
+
+
   )
 }

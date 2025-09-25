@@ -16,7 +16,9 @@ import {
   Clock, 
   BookOpen,
   Building,
-  ExternalLink
+  ExternalLink,
+  CreditCard,
+  User
 } from "lucide-react"
 import BranchGridIcon from "@/components/ui/branch-grid-icon"
 import BranchWiseSettings from "@/components/settings/branch-wise-settings"
@@ -30,29 +32,26 @@ import UserManagementSettings from "@/components/settings/user-management-settin
 import FinancialSettings from "@/components/settings/financial-settings"
 import AwardsSettings from "@/components/settings/awards-settings"
 import ReminderSettings from "@/components/settings/reminder-settings"
+import PaymentSettings from "@/components/settings/payment-settings"
+import ProfileSettings from "@/components/settings/profile-settings"
 
 export default function AcademySettings() {
   const [activeTab, setActiveTab] = useState("general")
 
   const settingsTabs = [
-    // {
-    //   id: "branch-wise",
-    //   label: "Branch-wise",
-    //   icon: <BranchGridIcon className="h-4 w-4 text-purple-600" />,
-    //   component: BranchWiseSettings
-    // },
+   
     {
       id: "general",
       label: "General Settings",
       icon: <Settings className="h-4 w-4" />,
       component: GeneralSettings
     },
-    {
-      id: "categories", 
-      label: "Categories",
-      icon: <BookOpen className="h-4 w-4" />,
-      component: CategorySettings
-    },
+    // {
+    //   id: "categories", 
+    //   label: "Categories",
+    //   icon: <BookOpen className="h-4 w-4" />,
+    //   component: CategorySettings
+    // },
     {
       id: "leave-policies",
       label: "Leave Policies", 
@@ -66,29 +65,36 @@ export default function AcademySettings() {
       component: NotificationSettings
     },
     {
-      id: "user-management",
-      label: "User Management",
-      icon: <Users className="h-4 w-4" />,
-      component: UserManagementSettings
+      id: "payments",
+      label: "Payment Settings",
+      icon: <CreditCard className="h-4 w-4" />,
+      component: PaymentSettings
     },
     {
-      id: "financials",
-      label: "Financial Settings", 
-      icon: <DollarSign className="h-4 w-4" />,
-      component: FinancialSettings
-    },
-    {
-      id: "awards",
-      label: "Awards & Recognition",
-      icon: <Award className="h-4 w-4" />,
-      component: AwardsSettings
-    },
-    {
-      id: "reminders",
-      label: "Reminders",
-      icon: <Clock className="h-4 w-4" />,
-      component: ReminderSettings
+      id: "profile",
+      label: "Profile Settings",
+      icon: <User className="h-4 w-4" />,
+      component: ProfileSettings
     }
+    // {
+    //   id: "user-management",
+    //   label: "User Management",
+    //   icon: <Users className="h-4 w-4" />,
+    //   component: UserManagementSettings
+    // },
+    // {
+    //   id: "financials",
+    //   label: "Financial Settings", 
+    //   icon: <DollarSign className="h-4 w-4" />,
+    //   component: FinancialSettings
+    // },
+    // {
+    //   id: "awards",
+    //   label: "Awards & Recognition",
+    //   icon: <Award className="h-4 w-4" />,
+    //   component: AwardsSettings
+    // }
+    // Reminders tab removed - content now available in Notifications page
   ]
 
   return (
@@ -115,7 +121,7 @@ export default function AcademySettings() {
               </Button>
             </div>
             <div className="border-b">
-              <TabsList className="w-full grid grid-cols-2 sm:grid-cols-3 min-h-20 md:grid-cols-4 gap-3 bg-transparent px-2 pb-4 justify-center z-10 relative bg-none mb-10">
+              <TabsList className="w-full grid grid-cols-2 sm:grid-cols-3 min-h-20 md:grid-cols-5 lg:grid-cols-5 gap-3 bg-transparent px-2 pb-4 justify-center z-10 relative bg-none mb-10">
                 {settingsTabs.map((tab) => (
                   <TabsTrigger
                     key={tab.id}

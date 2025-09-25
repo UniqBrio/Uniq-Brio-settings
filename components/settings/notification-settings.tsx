@@ -98,7 +98,7 @@ export default function NotificationSettings() {
     },
     {
       id: "system-updates",
-      name: "System & Updates",
+      name: "Reminder",
       description: "System notifications and important updates",
       notifications: [
         {

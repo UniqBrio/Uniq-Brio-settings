@@ -277,9 +277,9 @@ export default function GeneralSettings() {
                               isVirtual: false,
                               virtualPlatforms: []
                             })}
-                            aria-label="Physical location"
+                            aria-label="Offline location"
                           />
-                          <Label htmlFor="physical">Physical</Label>
+                          <Label htmlFor="offline">Offline</Label>
                         </div>
                         <div className="flex items-center space-x-2">
                           <input
@@ -392,7 +392,7 @@ export default function GeneralSettings() {
         </CardContent>
       </Card>
 
-      {/* Virtual Platforms Configuration */}
+      {/* Virtual Platforms Configuration
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -421,7 +421,7 @@ export default function GeneralSettings() {
             ))}
           </div>
         </CardContent>
-      </Card>
+      </Card> */}
     </div>
   )
 }
